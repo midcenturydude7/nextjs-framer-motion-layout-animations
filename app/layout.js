@@ -1,7 +1,5 @@
-import { Inter } from "next/font/google";
+import Menu from "./components/Menu";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +9,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rgm1dlw.css" />
+      </head>
+      <body className="font-[sofia-pro,_sans-serif] font-medium not-italic antialiased">
+        <Menu />
+        {children}
+      </body>
     </html>
   );
 }
