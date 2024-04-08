@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Wrapper, Tab } from "./Components";
+import { Tab } from "./Components";
 import "../scene.css";
 
 export default function Menu() {
@@ -12,7 +12,10 @@ export default function Menu() {
 
   return (
     <div className="flex items-center justify-center py-10">
-      <Wrapper onMouseLeave={() => setFocused(null)}>
+      <ul
+        onMouseLeave={() => setFocused(null)}
+        className="flex w-[fit-content] items-center gap-[32px] rounded-[8px] border-[1px] border-[#1A1D23] border-[solid] bg-[#1A1D23] px-[16px] py-[8px]"
+      >
         {tabs.map((item) => (
           <Tab
             key={item}
@@ -64,7 +67,7 @@ export default function Menu() {
             ) : null}
           </Tab>
         ))}
-      </Wrapper>
+      </ul>
     </div>
   );
 }
