@@ -40,17 +40,6 @@ export default function Menu() {
                     ease: "easeOut",
                   },
                 }}
-                // style={{
-                //   position: "absolute",
-                //   bottom: "-2px",
-                //   left: "-10px",
-                //   right: 0,
-                //   width: "140%",
-                //   height: "110%",
-                //   background: "#23272F",
-                //   borderRadius: "8px",
-                //   zIndex: 0,
-                // }}
                 layoutId="highlight"
               />
             ) : null}
@@ -58,16 +47,6 @@ export default function Menu() {
               <motion.div
                 className="absolute bottom-[-10px] left-[0px] right-[0] z-[0] h-[4px] rounded-[8px] bg-[#5686F5]"
                 initial={false}
-                // style={{
-                //   position: "absolute",
-                //   bottom: "-10px",
-                //   left: "0px",
-                //   right: 0,
-                //   height: "4px",
-                //   background: "#5686F5",
-                //   borderRadius: "8px",
-                //   zIndex: 0,
-                // }}
                 layoutId="underline"
               />
             ) : null}
