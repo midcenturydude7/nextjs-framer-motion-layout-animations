@@ -35,7 +35,7 @@ export default function Menu() {
     <div className="flex items-center justify-center py-10">
       <nav
         onMouseLeave={() => setFocused(null)}
-        className="flex w-[fit-content] items-center gap-[32px] rounded-[8px] border-[1px] border-[#1A1D23] border-[solid] bg-[#1A1D23] px-[16px] py-[8px]"
+        className="flex w-[fit-content] items-center gap-[32px] rounded-[8px] border-[1px] border-[#1A1D23] border-[solid] bg-[#1A1D23] px-[1.5rem] py-[.75rem]"
       >
         {navItems.map(({ path, id, label }) => {
           const isActive = path === pathname;
@@ -50,10 +50,12 @@ export default function Menu() {
                 }
                 onFocus={() => setFocused(path)}
                 onMouseEnter={() => setFocused(path)}
-                className="relative h-[30px] w-[75px] cursor-pointer outline-[none]"
+                className="relative h-[40px] w-[75px] cursor-pointer outline-[none]"
                 tabIndex={0}
               >
-                <span className="absolute bottom-[0] left-[4px] right-[0] top-[6px] z-[1] select-none text-[1rem] text-[#E8E8FD]">
+                <span
+                  className={`absolute bottom-[0] left-[4px] right-[0] top-[6px] z-[1] select-none text-[1rem] text-[#E8E8FD]`}
+                >
                   {label}
                 </span>
                 {focused === path ? (
@@ -71,7 +73,7 @@ export default function Menu() {
                 ) : null}
                 {selected === path ? (
                   <motion.div
-                    className="absolute bottom-[-10px] left-[0px] right-[0] z-[0] h-[4px] rounded-[8px] bg-[#5686F5]"
+                    className="absolute bottom-[-10px] left-[10px] right-[0] z-[0] h-[4px] rounded-[8px] bg-[#5686F5]"
                     initial={false}
                     layoutId="underline"
                   />
