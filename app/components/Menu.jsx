@@ -25,9 +25,8 @@ const navItems = [
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
 
 export default function Menu() {
-  // const tabs = ["Item 1", "Item 2", "Item 3"];
-
   const pathname = usePathname();
+  // const [isActive, setIsActive] = React.useState(false);
   const [focused, setFocused] = React.useState(null);
   const [selected, setSelected] = React.useState(pathname);
 
