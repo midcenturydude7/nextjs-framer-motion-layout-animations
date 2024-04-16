@@ -4,14 +4,13 @@ import { usePathname } from "next/navigation";
 
 export default function FauxContent() {
   const pathname = usePathname();
-  const isActive = navItems.path === pathname;
-  const pageName = navItems.label;
-  console.log(navItems.label);
+  const currentPage =
+    navItems.find((item) => item.path === pathname)?.label || "Page Not Found";
 
   return (
     <main className="px-8 pt-44">
-      <h1 data-active={isActive} className="mb-8 text-slate-200/80 text-xl">
-        {`This is the ${pageName} page`}
+      <h1 className="mb-8 text-xl text-slate-200/80">
+        This is the {currentPage} Page
       </h1>
       <h2 className="h-10 w-4/5 rounded bg-slate-700/25 text-2xl font-bold" />
       <div className="mt-8 space-y-8">
