@@ -1,7 +1,12 @@
+// About page
+import FauxContent from "../components/FauxContent";
+
 export default function page() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24 text-slate-200">
-      This is the about page.
+    <div className="mx-auto flex w-full max-w-6xl flex-1 overflow-hidden">
+      <div className="flex-1">
+        <FauxContent />
+      </div>
     </div>
   );
 }

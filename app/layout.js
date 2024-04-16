@@ -1,4 +1,4 @@
-import Menu from "./components/Menu";
+import Header from "./components/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/rgm1dlw.css" />
       </head>
       <body className="font-[sofia-pro,_sans-serif] font-medium not-italic antialiased">
-        <Menu />
+        <Header />
         {children}
       </body>
     </html>
