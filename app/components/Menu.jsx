@@ -31,7 +31,7 @@ export default function Menu() {
               className="relative h-[40px] w-[75px] cursor-pointer outline-[none]"
               tabIndex={0}
             >
-              <span className="absolute bottom-[0] left-[4px] right-[0] top-[6px] z-10 select-none text-[1rem] text-[#E8E8FD]/50 transition-colors hover:text-[#E8E8FD]">
+              <span className="absolute bottom-[0] left-[4px] right-[0] top-[6px] z-10 select-none text-[1rem] text-[#E8E8FD]/50 transition-colors hover:text-[#E8E8FD]/90">
                 {label}
               </span>
               {focused === path ? (

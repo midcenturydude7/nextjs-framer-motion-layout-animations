@@ -10,8 +10,9 @@ export default function FauxContent() {
   return (
     <main className="px-8 pt-44">
       <h1 className="mb-8 text-xl text-slate-200/80">
-        What page is this? It is the{" "}
-        <span className="font-bold text-lime-300/90">{currentPage} Page</span>
+        &#187;{" "}
+        <span className="font-bold text-lime-300/90">{currentPage} Page</span>{" "}
+        &#171;
       </h1>
       <h2 className="h-10 w-4/5 rounded bg-slate-700/25 text-2xl font-bold" />
       <div className="mt-8 space-y-8">
