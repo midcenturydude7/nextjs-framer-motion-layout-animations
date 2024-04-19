@@ -58,7 +58,7 @@ export default function Header() {
             ),
             backgroundColor: useMotionTemplate`rgb(34 39 49 / ${useTransform(scrollYBoundedProgressThrottled, [0, 1], [1, 0.1])}`,
           }}
-          animate={{ ease: "easeInOut", duration: 1.5 }}
+          transition={{ ease: "easeInOut", delay: 0.4 }}
         >
           <Logo
             scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}

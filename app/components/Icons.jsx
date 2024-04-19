@@ -24,13 +24,13 @@ const navIcons = [
 
 export default function Icons() {
   return (
-    <nav className="flex cursor-pointer items-center gap-4">
+    <nav className="flex items-center gap-4">
       {navIcons.map(({ icon, url, id }) => {
         const Icon = icon;
         return (
           <Link key={id} href={url}>
-            <button className="rounded-full bg-slate-200/20 p-3 outline-[none]">
-              <span className="text-2xl text-slate-200/60">
+            <button className="rounded-full border-[1px] border-transparent bg-slate-200/20 p-3 text-slate-200/60 outline-[none] transition-colors hover:border-[1px] hover:border-lime-300/80 hover:text-slate-100/80">
+              <span className="text-2xl ">
                 <Icon />
               </span>
             </button>

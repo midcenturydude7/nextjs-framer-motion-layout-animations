@@ -3,7 +3,7 @@ import React from "react";
 import { navItems } from "../lib/navItems";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion, useTransform} from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import "../scene.css";
 
 export default function Menu({ scrollYBoundedProgressThrottled }) {
@@ -19,6 +19,7 @@ export default function Menu({ scrollYBoundedProgressThrottled }) {
       style={{
         opacity: useTransform(scrollYBoundedProgressThrottled, [0, 1], [1, 0]),
       }}
+      // transition={{ ease: "easeInOut", duration: 0.5 }}
     >
       {navItems.map(({ path, id, label }) => {
         const isActive = path === pathname;
