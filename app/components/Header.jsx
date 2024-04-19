@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Menu from "./Menu";
+import Logo from "./Logo";
 import {
   motion,
   useScroll,
@@ -58,20 +59,12 @@ export default function Header() {
           }}
           animate={{ ease: "easeInOut", duration: 1.5 }}
         >
-          <motion.div
-            className="text-3xl"
-            style={{
-              scale: useTransform(
-                scrollYBoundedProgressThrottled,
-                [0, 1],
-                [1, 0.9],
-              ),
-            }}
-            animate={{ ease: "easeInOut", duration: 1.5 }}
-          >
-            LOGO
-          </motion.div>
-          <Menu />
+          <Logo
+            scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
+          />
+          <Menu
+            scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
+          />
           <div>ICONS</div>
         </motion.header>
       </div>

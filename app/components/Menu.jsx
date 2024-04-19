@@ -6,44 +6,11 @@ import Link from "next/link";
 import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
 import "../scene.css";
 
-function clamp(number, min, max) {
-  return Math.min(Math.max(number, min), max);
-}
-
-function useBoundedScroll(bounds) {
-  let { scrollY } = useScroll();
-  let scrollYBounded = useMotionValue(0);
-  let scrollYBoundedProgress = useTransform(
-    scrollYBounded,
-    [0, bounds],
-    [0, 1],
-  );
-
-  React.useEffect(() => {
-    return scrollY.on("change", (current) => {
-      let previous = scrollY.getPrevious();
-      let diff = current - previous;
-      let newScrollYBounded = scrollYBounded.get() + diff;
-
-      scrollYBounded.set(clamp(newScrollYBounded, 0, bounds));
-    });
-  }, [scrollY, scrollYBounded, bounds]);
-
-  return { scrollYBounded, scrollYBoundedProgress };
-}
-
-export default function Menu() {
+export default function Menu({ scrollYBoundedProgressThrottled }) {
   const pathname = usePathname();
   // const [isActive, setIsActive] = React.useState(false);
   const [focused, setFocused] = React.useState(null);
   const [selected, setSelected] = React.useState(pathname);
-
-  let { scrollYBoundedProgress } = useBoundedScroll(150);
-  let scrollYBoundedProgressThrottled = useTransform(
-    scrollYBoundedProgress,
-    [0, 0.75, 1],
-    [0, 0, 1],
-  );
 
   return (
     <motion.nav
