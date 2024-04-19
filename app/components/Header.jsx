@@ -2,6 +2,7 @@
 import React from "react";
 import Menu from "./Menu";
 import Logo from "./Logo";
+import Icons from "./Icons";
 import {
   motion,
   useScroll,
@@ -65,7 +66,7 @@ export default function Header() {
           <Menu
             scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
           />
-          <div>ICONS</div>
+          <Icons />
         </motion.header>
       </div>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 import { navItems } from "../lib/navItems";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion, useTransform, useScroll, useMotionValue } from "framer-motion";
+import { motion, useTransform} from "framer-motion";
 import "../scene.css";
 
 export default function Menu({ scrollYBoundedProgressThrottled }) {
