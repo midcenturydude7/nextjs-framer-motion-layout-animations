@@ -8,7 +8,6 @@ import "../scene.css";
 
 export default function Menu({ scrollYBoundedProgressThrottled }) {
   const pathname = usePathname();
-  // const [isActive, setIsActive] = React.useState(false);
   const [focused, setFocused] = React.useState(null);
   const [selected, setSelected] = React.useState(pathname);
 
@@ -19,7 +18,6 @@ export default function Menu({ scrollYBoundedProgressThrottled }) {
       style={{
         opacity: useTransform(scrollYBoundedProgressThrottled, [0, 1], [1, 0]),
       }}
-      // transition={{ ease: "easeInOut", duration: 0.5 }}
     >
       {navItems.map(({ path, id, label }) => {
         const isActive = path === pathname;

@@ -49,7 +49,7 @@ export default function Header() {
     <div className="mx-auto flex w-full max-w-3xl flex-1 overflow-hidden text-slate-600">
       <div className="z-0 flex-1">
         <motion.header
-          className="fixed inset-x-0 flex items-center justify-between border-b-[1px] border-[#3f3c3c]/80 bg-[#222731]/80 px-10 py-10 shadow backdrop-blur-md"
+          className="fixed inset-x-0 flex items-center justify-between border-b-[1px] border-[#3f3c3c]/80 bg-[#222731]/60 px-10 py-10 shadow backdrop-blur-md"
           style={{
             height: useTransform(
               scrollYBoundedProgressThrottled,
@@ -58,7 +58,6 @@ export default function Header() {
             ),
             backgroundColor: useMotionTemplate`rgb(34 39 49 / ${useTransform(scrollYBoundedProgressThrottled, [0, 1], [1, 0.1])}`,
           }}
-          transition={{ ease: "easeInOut", delay: 0.4 }}
         >
           <Logo
             scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
@@ -66,7 +65,9 @@ export default function Header() {
           <Menu
             scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
           />
-          <Icons />
+          <Icons
+            scrollYBoundedProgressThrottled={scrollYBoundedProgressThrottled}
+          />
         </motion.header>
       </div>
     </div>
