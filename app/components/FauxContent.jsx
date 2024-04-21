@@ -1,4 +1,5 @@
 "use client";
+import Card from "./Card";
 import { navItems } from "../lib/navItems";
 import { usePathname } from "next/navigation";
 
@@ -24,7 +25,11 @@ export default function FauxContent() {
             <p className="h-4 w-4/6 rounded bg-slate-700/25" />
           </div>
         ))}
-        <div className="h-64 rounded bg-slate-700/25"></div>
+        <div className="flex gap-4 justify-center">
+          <Card />
+          <Card />
+          <Card />
+        </div>
         {[...Array(90).keys()].map((i) => (
           <div key={i} className="space-y-2 text-sm">
             <p className="h-4 w-5/6 rounded bg-slate-700/25" />
