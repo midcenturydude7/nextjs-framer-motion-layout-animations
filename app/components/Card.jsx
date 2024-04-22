@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Card() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -16,9 +16,16 @@ function Card() {
         boxShadow: "0 10px 0.5rem rgba(0, 0, 0, 0.1)",
       }}
     >
-      <motion.h2 layout="position">Framer Motion 🚀</motion.h2>
+      <motion.h2
+        layout="position"
+        animate
+        transition={{ duration: 0, ease: "easeInOut" }}
+      >
+        Framer Motion 🚀
+      </motion.h2>
       {isOpen && (
         <motion.div
+          // layout="position"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
