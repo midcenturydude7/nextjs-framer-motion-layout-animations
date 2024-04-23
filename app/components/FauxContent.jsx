@@ -25,10 +25,22 @@ export default function FauxContent() {
             <p className="h-4 w-4/6 rounded bg-slate-700/25" />
           </div>
         ))}
-        <div className="flex gap-4 justify-center">
-          <Card />
-          <Card />
-          <Card />
+        <div className="flex justify-center gap-4">
+          {[...Array(3).keys()].map((i) => (
+            <Card key={i} />
+          ))}
+        </div>
+        {[...Array(2).keys()].map((i) => (
+          <div key={i} className="space-y-2 text-sm">
+            <p className="h-4 w-5/6 rounded bg-slate-700/25" />
+            <p className="h-4 rounded bg-slate-700/25" />
+            <p className="h-4 w-4/6 rounded bg-slate-700/25" />
+          </div>
+        ))}
+        <div className="flex justify-center gap-4">
+          {[...Array(3).keys()].map((i) => (
+            <Card key={i} />
+          ))}
         </div>
         {[...Array(90).keys()].map((i) => (
           <div key={i} className="space-y-2 text-sm">

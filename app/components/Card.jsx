@@ -8,7 +8,7 @@ function Card() {
   return (
     <motion.div
       layout
-      transition={{ layout: { duration: 0.7, type: "spring" } }}
+      transition={{ layout: { duration: 0.4, type: "spring", bounce: 0.25 } }}
       onClick={() => setIsOpen(!isOpen)}
       className="flex w-[fit-content] cursor-pointer flex-col items-center justify-center bg-slate-700/25 p-10 text-xl text-slate-200/60"
       style={{
@@ -25,7 +25,7 @@ function Card() {
       </motion.h2>
       {isOpen && (
         <motion.div
-          // layout="position"
+          layout="position"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeInOut" }}
