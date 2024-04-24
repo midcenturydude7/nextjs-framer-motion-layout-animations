@@ -38,7 +38,7 @@ export default function FauxContent() {
           </div>
         ))}
         <div className="flex justify-center gap-4">
-          {[...Array(3).keys()].map((i) => (
+          {[...Array(4).keys()].map((i) => (
             <Card key={i} />
           ))}
         </div>
