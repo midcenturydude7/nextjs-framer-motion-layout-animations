@@ -8,7 +8,7 @@ function Card() {
   return (
     <motion.div
       layout
-      transition={{ layout: { duration: 0.4, type: "spring", bounce: 0.25 } }}
+      transition={{ layout: { duration: 0.5, type: "spring", bounce: 0.3 } }}
       onClick={() => setIsOpen(!isOpen)}
       className="flex w-[fit-content] cursor-pointer flex-col items-center justify-center bg-slate-700/25 p-10 text-xl text-slate-200/60 transition-colors hover:text-slate-100/80"
       style={{
