@@ -18,7 +18,6 @@ function Card() {
     >
       <motion.h2
         layout="position"
-        animate
         transition={{ duration: 0, ease: "easeInOut" }}
       >
         Framer Motion 🚀
