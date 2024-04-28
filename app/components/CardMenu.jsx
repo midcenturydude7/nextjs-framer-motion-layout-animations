@@ -5,6 +5,7 @@ import { LiaArchwaySolid } from "react-icons/lia";
 export default function CardMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(false);
 
   return (
     <motion.div
@@ -20,7 +21,7 @@ export default function CardMenu() {
     >
       <motion.div
         layout
-        transition={{ layout: { duration: 1, type: "spring", bounce: 0.3 } }}
+        transition={{ layout: { duration: 0.2, type: "spring", bounce: 0.3 } }}
         className={`flex items-center justify-between gap-2`}
       >
         <span
