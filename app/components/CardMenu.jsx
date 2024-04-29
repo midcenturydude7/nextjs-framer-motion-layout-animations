@@ -1,49 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LiaArchwaySolid } from "react-icons/lia";
-
-const edTabs = [
-  {
-    tag: "Javascript",
-    title1: "Name of the JS course",
-    description1:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title2: "Name of the JS course",
-    description2:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title3: "Name of the JS course",
-    description3:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-  },
-  {
-    tag: "CSS",
-    title1: "Name of the CSS course",
-    description1:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title2: "Name of the CSS course",
-    description2:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title3: "Name of the CSS course",
-    description3:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-  },
-  {
-    tag: "React",
-    title1: "Name of the React course",
-    description1:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title2: "Name of the React course",
-    description2:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-    title3: "Name of the React course",
-    description3:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
-  },
-].map((n, idx) => ({ ...n, id: idx + 1 }));
+import { edTabs } from "../lib/edTabs";
 
 export default function CardMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState(false);
+  const [selected, setSelected] = React.useState(null);
 
   return (
     <motion.div
@@ -51,6 +13,7 @@ export default function CardMenu() {
       transition={{ layout: { duration: 0.5, type: "spring", bounce: 0.3 } }}
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}
+      onMouseLeave={() => setSelected(null)}
       className={`flex w-[fit-content] items-center justify-between gap-2 border border-slate-200/20 px-20 py-8 text-slate-200/60 ${isOpen ? "pl-5 pr-8" : ""}`}
       style={{
         borderRadius: "0.5rem",
@@ -105,7 +68,7 @@ export default function CardMenu() {
               {edTabs.map((tab) => {
                 return (
                   <div key={tab.id}>
-                    {tab.id === selected && isOpen && (
+                    {tab.id === selected && (
                       <div>
                         <h3>{tab.title1}</h3>
                         <p>{tab.description1}</p>
