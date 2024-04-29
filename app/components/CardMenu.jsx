@@ -2,10 +2,48 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LiaArchwaySolid } from "react-icons/lia";
 
+const edTabs = [
+  {
+    tag: "Javascript",
+    title1: "Name of the JS course",
+    description1:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title2: "Name of the JS course",
+    description2:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title3: "Name of the JS course",
+    description3:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+  },
+  {
+    tag: "CSS",
+    title1: "Name of the CSS course",
+    description1:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title2: "Name of the CSS course",
+    description2:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title3: "Name of the CSS course",
+    description3:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+  },
+  {
+    tag: "React",
+    title1: "Name of the React course",
+    description1:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title2: "Name of the React course",
+    description2:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+    title3: "Name of the React course",
+    description3:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
+  },
+].map((n, idx) => ({ ...n, id: idx + 1 }));
+
 export default function CardMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [selected, setSelected] = React.useState(false);
 
   return (
     <motion.div
@@ -13,7 +51,7 @@ export default function CardMenu() {
       transition={{ layout: { duration: 0.5, type: "spring", bounce: 0.3 } }}
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}
-      className={`flex w-[fit-content] cursor-pointer items-center justify-between gap-2 border border-slate-200/20 px-20 py-8 text-slate-200/60 ${isOpen ? "relative cursor-default pl-5 pr-8" : ""}`}
+      className={`flex w-[fit-content] items-center justify-between gap-2 border border-slate-200/20 px-20 py-8 text-slate-200/60 ${isOpen ? "pl-5 pr-8" : ""}`}
       style={{
         borderRadius: "0.5rem",
         boxShadow: "0 10px 0.5rem rgba(0, 0, 0, 0.1)",
@@ -33,6 +71,7 @@ export default function CardMenu() {
         <motion.h2
           layout="position"
           transition={{ duration: 0.2, ease: "easeInOut" }}
+          className={`${isOpen ? "cursor-default" : "cursor-pointer"}`}
         >
           Education
         </motion.h2>
@@ -43,17 +82,43 @@ export default function CardMenu() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-md flex pl-20 text-slate-200/60"
+            className="text-md pl-20 text-slate-200/60"
           >
-            <ul className="flex cursor-pointer items-center justify-between gap-6">
-              <li className="border-r-[1px] border-slate-200/20 pr-4 hover:text-slate-300/80 ">
-                Javascript
-              </li>
-              <li className="border-r-[1px] border-slate-200/20 pr-6 hover:text-slate-300/80">
-                CSS
-              </li>
-              <li className="hover:text-slate-300/80">React</li>
-            </ul>
+            <div>
+              <ul className="flex items-center justify-between gap-6">
+                {edTabs.map((tab) => {
+                  return (
+                    <li
+                      key={tab.id}
+                      onClick={() => setSelected(tab.id)}
+                      className={`cursor-pointer border-r-[1px] border-slate-200/20 pr-4 hover:text-slate-300/80 ${
+                        tab.tag === "React" ? "border-none" : ""
+                      } ${tab.tag === "CSS" ? "pr-6" : ""}`}
+                    >
+                      {tab.tag}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div>
+              {edTabs.map((tab) => {
+                return (
+                  <div key={tab.id}>
+                    {tab.id === selected && isOpen && (
+                      <div>
+                        <h3>{tab.title1}</h3>
+                        <p>{tab.description1}</p>
+                        <h3>{tab.title2}</h3>
+                        <p>{tab.description2}</p>
+                        <h3>{tab.title3}</h3>
+                        <p>{tab.description3}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </motion.div>
         )}
       </motion.div>
