@@ -50,9 +50,6 @@ export default function CardMenu() {
             <div className="relative">
               <motion.ul
                 layout={`${selected ? "position" : ""}`}
-                // transition={
-                //   selected ? { duration: 3, ease: "easeInOut" } : null
-                // }
                 className={`flex items-center justify-between gap-6 ${selected ? "absolute right-0 top-0" : ""}`}
               >
                 {edTabs.map((tab) => {
