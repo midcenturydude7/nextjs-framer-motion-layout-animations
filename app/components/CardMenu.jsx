@@ -49,7 +49,10 @@ export default function CardMenu() {
           >
             <div className="relative">
               <motion.ul
-                layout="position"
+                layout={`${selected ? "position" : ""}`}
+                // transition={
+                //   selected ? { duration: 3, ease: "easeInOut" } : null
+                // }
                 className={`flex items-center justify-between gap-6 ${selected ? "absolute right-0 top-0" : ""}`}
               >
                 {edTabs.map((tab) => {
@@ -72,7 +75,13 @@ export default function CardMenu() {
                 return (
                   <div key={tab.id}>
                     {tab.id === selected && (
-                      <motion.div layout="position" className="pt-10">
+                      <motion.div
+                        layout="position"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
+                        className="pb-6 pt-10"
+                      >
                         <h3 className="text-bold py-2 underline">
                           {tab.title1}
                         </h3>
