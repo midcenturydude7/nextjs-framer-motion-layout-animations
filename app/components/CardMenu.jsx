@@ -14,7 +14,7 @@ export default function CardMenu() {
       onPointerEnter={() => setIsOpen(true)}
       onPointerLeave={() => setIsOpen(false)}
       onMouseLeave={() => setSelected(null)}
-      className={`flex w-[fit-content] items-center justify-between gap-2 border border-slate-200/20 px-20 py-8 text-slate-200/60 ${isOpen ? "pl-5 pr-8" : ""}`}
+      className={`flex w-[fit-content] justify-between gap-2 border border-slate-200/20 px-20 py-8 text-slate-200/60 ${isOpen ? "pl-5 pr-8" : ""}`}
       style={{
         borderRadius: "0.5rem",
         boxShadow: "0 10px 0.5rem rgba(0, 0, 0, 0.1)",
@@ -47,8 +47,11 @@ export default function CardMenu() {
             transition={{ duration: 1, ease: "easeInOut" }}
             className="text-md pl-20 text-slate-200/60"
           >
-            <div>
-              <ul className="flex items-center justify-between gap-6">
+            <div className="relative">
+              <motion.ul
+                layout="position"
+                className={`flex items-center justify-between gap-6 ${selected ? "absolute right-0 top-0" : ""}`}
+              >
                 {edTabs.map((tab) => {
                   return (
                     <li
@@ -62,21 +65,27 @@ export default function CardMenu() {
                     </li>
                   );
                 })}
-              </ul>
+              </motion.ul>
             </div>
             <div>
               {edTabs.map((tab) => {
                 return (
                   <div key={tab.id}>
                     {tab.id === selected && (
-                      <div className="mt-2">
-                        <h3 className="py-2">{tab.title1}</h3>
+                      <motion.div layout="position" className="pt-10">
+                        <h3 className="text-bold py-2 underline">
+                          {tab.title1}
+                        </h3>
                         <p>{tab.description1}</p>
-                        <h3 className="py-4">{tab.title2}</h3>
+                        <h3 className="text-bold py-4 underline">
+                          {tab.title2}
+                        </h3>
                         <p>{tab.description2}</p>
-                        <h3 className="py-4">{tab.title3}</h3>
+                        <h3 className="text-bold py-4 underline">
+                          {tab.title3}
+                        </h3>
                         <p>{tab.description3}</p>
-                      </div>
+                      </motion.div>
                     )}
                   </div>
                 );
