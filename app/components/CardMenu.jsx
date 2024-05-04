@@ -69,12 +69,12 @@ export default function CardMenu() {
                 return (
                   <div key={tab.id}>
                     {tab.id === selected && (
-                      <div>
-                        <h3>{tab.title1}</h3>
+                      <div className="mt-2">
+                        <h3 className="py-2">{tab.title1}</h3>
                         <p>{tab.description1}</p>
-                        <h3>{tab.title2}</h3>
+                        <h3 className="py-4">{tab.title2}</h3>
                         <p>{tab.description2}</p>
-                        <h3>{tab.title3}</h3>
+                        <h3 className="py-4">{tab.title3}</h3>
                         <p>{tab.description3}</p>
                       </div>
                     )}
