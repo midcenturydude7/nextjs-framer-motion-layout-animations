@@ -23,21 +23,25 @@ export default function CardMenu() {
       <motion.div
         layout
         transition={{ layout: { duration: 0.2, type: "spring", bounce: 0.3 } }}
-        className={`flex items-center justify-between gap-2`}
+        className="relative flex items-center justify-between gap-2"
       >
-        <span
-          className="flex border border-slate-200/20 bg-slate-200/10 p-2"
-          style={{ borderRadius: "0.3rem" }}
+        <div
+          className={`flex items-center justify-between gap-2 ${selected ? "absolute left-0 top-0" : ""}`}
         >
-          <LiaArchwaySolid />
-        </span>
-        <motion.h2
-          layout="position"
-          transition={{ duration: 0.2, ease: "easeInOut" }}
-          className={`${isOpen ? "cursor-default" : "cursor-pointer"}`}
-        >
-          Education
-        </motion.h2>
+          <span
+            className="flex border border-slate-200/20 bg-slate-200/10 p-2"
+            style={{ borderRadius: "0.3rem" }}
+          >
+            <LiaArchwaySolid />
+          </span>
+          <motion.h2
+            layout="position"
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className={`${isOpen ? "cursor-default" : "cursor-pointer"}`}
+          >
+            Education
+          </motion.h2>
+        </div>
 
         {isOpen && (
           <motion.div
@@ -49,7 +53,7 @@ export default function CardMenu() {
           >
             <div className="relative">
               <motion.ul
-                layout={`${selected ? "position" : ""}`}
+                layout="position"
                 className={`flex items-center justify-between gap-6 ${selected ? "absolute right-0 top-0" : ""}`}
               >
                 {edTabs.map((tab) => {
@@ -74,10 +78,10 @@ export default function CardMenu() {
                     {tab.id === selected && (
                       <motion.div
                         layout="position"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: 0, y: 5 }}
+                        animate={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ duration: 1, ease: "easeInOut" }}
-                        className="pb-6 pt-10"
+                        className="ml-[-40px] max-w-[75%] pt-10"
                       >
                         <h3 className="text-bold py-2 underline">
                           {tab.title1}
