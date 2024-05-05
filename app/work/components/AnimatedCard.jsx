@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-// import Image from "next/image";
 import React from "react";
 import { motion, AnimatedPresence } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
@@ -22,7 +22,7 @@ export default function AnimatedCard() {
   }, []);
 
   return (
-    <div className={styles.pageWrapper}>
+    <div className="mx-auto w-[60%] bg-[#1A1D23] py-8" style={{ borderRadius: 12}}>
       {activeGame ? (
         <>
           <div className={styles.overlay} />

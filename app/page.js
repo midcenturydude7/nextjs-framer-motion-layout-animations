@@ -1,4 +1,3 @@
-import Card from "./components/Card";
 import FauxContent from "./components/FauxContent";
 
 export default function Home() {

@@ -6,6 +6,7 @@
   align-items: center;
   padding: 0;
   margin: 48px 0;
+  color: #cacaca8e;
 }
 
 .list li {
@@ -22,7 +23,7 @@
   flex-grow: 1;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #d4d6d861;
+  border-bottom: 1px solid rgba(82, 82, 82, 0.25);
 }
 
 .list li:last-of-type .game-wrapper {
@@ -46,16 +47,16 @@
 
 .gameDescription {
   font-size: 14px;
-  color: #63635d;
+  color: #b8b8b6;
 }
 
 .button {
   border-radius: 9999px;
-  background: #f1f0ef;
+  background-color: rgba(39, 54, 84, 0.6);
   padding: 4px 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #007aff;
+  color: #cacaca8e;
 }
 
 .active {
