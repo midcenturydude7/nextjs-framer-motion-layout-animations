@@ -36,7 +36,7 @@ export default function CardMenu() {
           </span>
           <motion.h2
             layout="position"
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             className={`${isOpen ? "cursor-default" : "cursor-pointer"}`}
           >
             Education
