@@ -14,7 +14,7 @@ export default function Menu({ scrollYBoundedProgressThrottled }) {
   return (
     <motion.nav
       onMouseLeave={() => setFocused(null)}
-      className="flex w-[fit-content] items-center justify-center gap-8 rounded-[8px] border-[1px] border-[#1A1D23] border-[solid] bg-[#1A1D23] py-[.65rem] pl-[1.35rem] pr-[2rem]"
+      className="flex w-[fit-content] items-center justify-center gap-8 rounded-[8px] border-[1px]  border-[#3f3c3c]/80 bg-[#1A1D23] py-[.65rem] pl-[1.35rem] pr-[2rem]"
       style={{
         opacity: useTransform(scrollYBoundedProgressThrottled, [0, 1], [1, 0]),
       }}
@@ -50,7 +50,7 @@ export default function Menu({ scrollYBoundedProgressThrottled }) {
               ) : null}
               {selected === path ? (
                 <motion.div
-                  className="absolute bottom-[-8px] left-[0px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/70"
+                  className="absolute bottom-[-10px] left-[0px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/70"
                   layoutId="underline"
                 />
               ) : null}

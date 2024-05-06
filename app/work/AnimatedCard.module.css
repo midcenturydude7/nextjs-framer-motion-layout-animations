@@ -52,7 +52,7 @@
 
 .button {
   border-radius: 9999px;
-  background-color: rgba(39, 54, 84, 0.6);
+  background: rgba(39, 54, 84, 0.6);
   padding: 4px 12px;
   font-size: 12px;
   font-weight: 600;
@@ -76,7 +76,7 @@
   align-items: flex-start;
   gap: 16px;
   overflow: hidden;
-  background: white;
+  background: rgb(180, 180, 180);
   padding: 16px;
 }
 
