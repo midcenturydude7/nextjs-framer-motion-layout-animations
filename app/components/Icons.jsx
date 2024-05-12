@@ -44,7 +44,7 @@ export default function Icons({ scrollYBoundedProgressThrottled }) {
               onFocus={() => setFocused(label)}
               onMouseEnter={() => setFocused(label)}
               tabIndex={0}
-              className="relative h-[50px] w-[50px] rounded-full border-[1px] border-transparent bg-[#1A1D23] text-[#E8E8FD]/50 outline-[none] transition-colors hover:text-[#E8E8FD]/90"
+              className="relative h-[50px] w-[50px] rounded-full border-[1px] border-[#3f3c3c] bg-[#1A1D23] text-[#E8E8FD]/50 outline-[none] transition-colors hover:text-[#E8E8FD]/90"
             >
               <span className="absolute bottom-[0] left-[12px] right-[0] top-[12px] z-10 select-none text-2xl">
                 <Icon />
