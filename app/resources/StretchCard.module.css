@@ -10,13 +10,13 @@
   cursor: pointer;
 }
 
-.card-inner {
+.cardInner {
   height: 430px;
   width: 360px;
   position: relative;
 }
 
-.card-inner > img {
+.cardInner > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -30,7 +30,7 @@
   inset: 0;
 }
 
-.card-active {
+.cardActive {
   width: 360px;
   position: absolute;
   top: 0;
@@ -42,23 +42,23 @@
   flex-direction: column;
 }
 
-.long-description {
+.longDescription {
   padding: 16px;
   flex: 1;
 }
 
-.long-description p {
+.longDescription p {
   line-height: 1.6;
   color: #666666;
   margin-bottom: 16px;
 }
 
-.long-description b {
+.longDescription b {
   color: black;
   font-weight: 600;
 }
 
-.card-heading {
+.cardHeading {
   font-size: 40px;
   line-height: 0.9;
   font-weight: 800;
@@ -69,20 +69,20 @@
   margin-bottom: 4px;
 }
 
-.card-description {
+.cardDescription {
   font-size: 13px;
   color: white;
   opacity: 0.9;
 }
 
-.card-content {
+.cardContent {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.extra-info {
+.extraInfo {
   position: relative;
   display: flex;
   width: 100%;
@@ -93,26 +93,26 @@
   backdrop-filter: blur(2px);
 }
 
-.extra-info img {
+.extraInfo img {
   border-radius: 8px;
 }
 
-.card-content .card-text {
+.cardContent .card-text {
   padding: 0 16px 12px;
 }
 
-.game-title {
+.gameTitle {
   font-size: 12px;
   font-weight: 600;
   color: white;
 }
 
-.game-subtitle {
+.gameSubtitle {
   font-size: 12px;
   color: #c4c5cd;
 }
 
-.get-button {
+.getButton {
   margin-left: auto;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.3);
@@ -122,7 +122,7 @@
   color: white;
 }
 
-.bottom-bar {
+.bottomBar {
   height: 64px;
   width: 100%;
   padding: 12px 16px;
@@ -135,22 +135,22 @@
   background-color: rgb(0 0 0 / 0.15);
 }
 
-.bottom-bar img {
+.bottomBar img {
   border-radius: 8px;
 }
 
-.card-title {
+.cardTitle {
   font-size: 12px;
   font-weight: 500;
   color: white;
 }
 
-.card-subtitle {
+.cardSubtitle {
   font-size: 12px;
   color: #b9babc;
 }
 
-.bottom-bar-content {
+.bottomBarContent {
   display: flex;
   flex-direction: column;
 }
@@ -165,7 +165,7 @@
   color: white;
 }
 
-.cards-wrapper {
+.cardsWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +182,7 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
-.close-button {
+.closeButton {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -204,7 +204,7 @@
   height: 100%;
 }
 
-.desc-wrapper {
+.descWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

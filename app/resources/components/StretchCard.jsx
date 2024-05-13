@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,7 +7,7 @@ import styles from "./StretchCard.module.css";
 
 export default function StretchCard({ card, setActiveCard }) {
   return (
-    <div>
+    <div className={styles.card}>
       <img src={card.image} alt="image" style={{ borderRadius: 20 }} />
       <button aria-hidden tabIndex={-1} className={styles.closeButton}></button>
     </div>
