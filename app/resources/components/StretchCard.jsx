@@ -2,8 +2,8 @@
 "use client";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useConClickOutside } from "usehooks-ts";
-import styles from "./StretchCard.module.css";
+import { useOnClickOutside } from "usehooks-ts";
+import styles from "../StretchCard.module.css";
 
 function Card({ card, setActiveCard }) {
   return (
@@ -75,7 +75,7 @@ function Card({ card, setActiveCard }) {
 
 function ActiveCard({ activeCard, setActiveCard }) {
   const ref = React.useRef(null);
-  useConClickOutside(ref, () => setActiveCard(null));
+  useOnClickOutside(ref, () => setActiveCard(null));
 
   return (
     <div className={`${styles.card} ${styles.cardActive}`}>
