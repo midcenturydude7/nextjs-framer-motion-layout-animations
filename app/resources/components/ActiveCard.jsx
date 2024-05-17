@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useOnClickOutside } from "usehooks-ts";
 import styles from "../StretchCard.module.css";
 
@@ -10,10 +10,21 @@ export default function ActiveCard({ activeCard, setActiveCard }) {
   useOnClickOutside(ref, () => setActiveCard(null));
 
   return (
-    <div ref={ref} className={`${styles.card} ${styles.cardActive}`}>
+    <motion.div
+      ref={ref}
+      layoutId={`card-${activeCard.title}`}
+      className={`${styles.card} ${styles.cardActive}`}
+      style={{ borderRadius: 0 }}
+    >
       <div className={styles.cardInner}>
-        <img src={activeCard.image} alt="image" style={{ borderRadius: 0 }} />
-        <button
+        <motion.img
+          layoutId={`image-${activeCard.title}`}
+          src={activeCard.image}
+          alt="image"
+          style={{ borderRadius: 0 }}
+        />
+        <motion.button
+          layoutId={`close-button-${activeCard.title}`}
           onClick={() => setActiveCard(null)}
           className={styles.closeButton}
           aria-label="Close button"
@@ -33,16 +44,27 @@ export default function ActiveCard({ activeCard, setActiveCard }) {
               d="M6 18 18 6M6 6l12 12"
             />
           </svg>
-        </button>
-        <div className={`${styles.cardContent} ${styles.activeCardContent}`}>
+        </motion.button>
+        <motion.div
+          layoutId={`card-content-${activeCard.title}`}
+          className={`${styles.cardContent} ${styles.activeCardContent}`}
+        >
           <div className={styles.cardText}>
-            <h2 className={styles.cardHeading}>Game of the day</h2>
+            <motion.h2
+              layoutId={`card-heading-${activeCard.title}`}
+              layout
+              className={styles.cardHeading}
+            >
+              Game of the day
+            </motion.h2>
           </div>
-          <div
+          <motion.div
+            layoutId={`card-extra-info-${activeCard.title}`}
             className={styles.extraInfo}
             style={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20 }}
           >
-            <img
+            <motion.img
+              layoutId={`card-game-image-${activeCard.title}`}
               src={activeCard.logo}
               alt="play"
               width={40}
@@ -50,17 +72,34 @@ export default function ActiveCard({ activeCard, setActiveCard }) {
               className="rounded-lg"
             />
             <div className={styles.descWrapper}>
-              <span className={styles.gameTitle}>{activeCard.title}</span>
-              <span className={styles.gameSubtitle}>
+              <motion.span
+                layoutId={`card-game-title-${activeCard.title}`}
+                className={styles.gameTitle}
+              >
+                {activeCard.title}
+              </motion.span>
+              <motion.span
+                layoutId={`card-game-subtitle-${activeCard.title}`}
+                className={styles.gameSubtitle}
+              >
                 {activeCard.description}
-              </span>
+              </motion.span>
             </div>
-            <button className={styles.getButton}>Get</button>
-          </div>
-        </div>
+            <motion.button
+              layoutId={`card-button-${activeCard.title}`}
+              layout
+              className={styles.getButton}
+            >
+              Get
+            </motion.button>
+          </motion.div>
+        </motion.div>
       </div>
 
-      <div className={styles.longDescription}>
+      <motion.div
+        layoutId={`card-long-description-${activeCard.title}`}
+        className={styles.longDescription}
+      >
         <p>
           <b>Are you ready?</b> {activeCard.longDescription}
         </p>
@@ -70,7 +109,7 @@ export default function ActiveCard({ activeCard, setActiveCard }) {
           through mystical lands filled with enchanting forests and towering
           mountains. Players can explore the world, build their own viking
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

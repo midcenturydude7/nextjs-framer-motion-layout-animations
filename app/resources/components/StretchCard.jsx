@@ -28,10 +28,21 @@ export default function StretchCard() {
       {cardItems.map((card) => (
         <Card key={card.title} card={card} setActiveCard={setActiveCard} />
       ))}
-      {activeCard ? <div className={styles.overlay}></div> : null}
-      {activeCard ? (
-        <ActiveCard activeCard={activeCard} setActiveCard={setActiveCard} />
-      ) : null}
+      <AnimatePresence>
+        {activeCard ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={styles.overlay}
+          />
+        ) : null}
+      </AnimatePresence>
+      <AnimatePresence>
+        {activeCard ? (
+          <ActiveCard activeCard={activeCard} setActiveCard={setActiveCard} />
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }

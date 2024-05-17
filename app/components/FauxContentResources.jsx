@@ -6,7 +6,7 @@ import StretchCard from "../resources/components/StretchCard";
 import { navItems } from "../lib/navItems";
 import { usePathname } from "next/navigation";
 
-export default function FauxContenAbbrev() {
+export default function FauxContenResources() {
   const pathname = usePathname();
   const currentPage =
     navItems.find((item) => item.path === pathname)?.label || "Page Not Found";
@@ -28,7 +28,9 @@ export default function FauxContenAbbrev() {
             <p className="h-4 w-4/6 rounded bg-slate-700/25" />
           </div>
         ))}
-        <StretchCard />
+        <div className="mx-auto flex items-center justify-center">
+          <StretchCard />
+        </div>
         {[...Array(2).keys()].map((i) => (
           <div key={i} className="space-y-2 text-sm">
             <p className="h-4 w-5/6 rounded bg-slate-700/25" />
