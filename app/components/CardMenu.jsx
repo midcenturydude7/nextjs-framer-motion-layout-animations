@@ -6,6 +6,7 @@ import { edTabs } from "../lib/edTabs";
 export default function CardMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(null);
+  const id = React.useId();
 
   return (
     <motion.div
@@ -59,8 +60,8 @@ export default function CardMenu() {
                 {edTabs.map((tab) => {
                   return (
                     <li
-                      key={tab.id}
-                      onClick={() => setSelected(tab.id)}
+                      key={tab.slug}
+                      onClick={() => setSelected(tab.slug)}
                       className={`cursor-pointer border-r-[1px] border-slate-200/20 pr-4 hover:text-slate-300/80 ${
                         tab.tag === "React" ? "border-none" : ""
                       } ${tab.tag === "CSS" ? "pr-6" : ""}`}
@@ -74,8 +75,8 @@ export default function CardMenu() {
             <div>
               {edTabs.map((tab) => {
                 return (
-                  <div key={tab.id}>
-                    {tab.id === selected && (
+                  <div key={tab.slug}>
+                    {tab.slug === selected && (
                       <motion.div
                         layout="position"
                         initial={{ opacity: 0, x: 0, y: 5 }}

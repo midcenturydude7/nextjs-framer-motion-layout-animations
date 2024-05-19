@@ -35,4 +35,4 @@ export const edTabs = [
     description3:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nihil atque nemo corrupti rem reiciendis, dolores illum hic ipsa saepe.",
   },
-].map((n, idx) => ({ ...n, id: idx + 1 }));
+].map((n, slugx) => ({ ...n, slug: slugx + 1 }));
