@@ -84,18 +84,33 @@ export default function CardMenu() {
                         transition={{ duration: 1, ease: "easeInOut" }}
                         className="ml-[-40px] max-w-[75%] pt-10"
                       >
-                        <h3 className="text-bold py-2 underline">
+                        <h3
+                          layoutId={`${tab.slug}-title`}
+                          className="text-bold py-2 underline"
+                        >
                           {tab.title1}
                         </h3>
-                        <p>{tab.description1}</p>
-                        <h3 className="text-bold py-4 underline">
+                        <p layoutId={`${tab.slug}-description`}>
+                          {tab.description1}
+                        </p>
+                        <h3
+                          layoutId={`${tab.slug}-title`}
+                          className="text-bold py-4 underline"
+                        >
                           {tab.title2}
                         </h3>
-                        <p>{tab.description2}</p>
-                        <h3 className="text-bold py-4 underline">
+                        <p layoutId={`${tab.slug}-description`}>
+                          {tab.description2}
+                        </p>
+                        <h3
+                          layoutId={`${tab.slug}-title`}
+                          className="text-bold py-4 underline"
+                        >
                           {tab.title3}
                         </h3>
-                        <p>{tab.description3}</p>
+                        <p layoutId={`${tab.slug}-description`}>
+                          {tab.description3}
+                        </p>
                       </motion.div>
                     )}
                   </div>
